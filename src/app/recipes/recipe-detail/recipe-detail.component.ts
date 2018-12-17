@@ -1,6 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Recipe} from '../recipe.model';
+import { Component, Injectable, Input, OnInit } from '@angular/core';
+import { Recipe } from '../recipe.model';
+import { ShoppingListService } from '../../shopping-list/shopping-list.service';
 
+@Injectable()
 @Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',
@@ -9,11 +11,14 @@ import {Recipe} from '../recipe.model';
 export class RecipeDetailComponent implements OnInit {
   @Input() recipe: Recipe;
   isOpen: boolean;
-  constructor() {
+  constructor(private shoppingListService: ShoppingListService) {
   }
 
   ngOnInit() {
     this.isOpen = false;
   }
 
+  onAddToShoppingList() {
+    this.shoppingListService.addIngredients(this.recipe.ingredients);
+  }
 }
