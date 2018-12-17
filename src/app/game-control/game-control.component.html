@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <button
+      class="col-sm-4 btn btn-success"
+      (click)="onStartGame()">
+      Start Game
+    </button>
+    <button
+      class="col-sm-4 btn btn-danger"
+      (click)="onStopGame()">
+      Stop Game
+    </button>
+  </div>
+  <div class="row">
+    <p>{{ count }}</p>
+  </div>
+  <div class="col-xs-6">
+    <app-odd *ngFor="let odd of odds"><span style="margin-right:2px; color: red; word-break: break-word;">{{ odd }}</span></app-odd>
+  </div>
+  <div class="col-xs-6">
+    <app-even *ngFor="let even of evens"><span style="margin-right: 2px; color: blue; word-break: break-word;">{{ even }}</span></app-even>
+  </div>
+</div>
