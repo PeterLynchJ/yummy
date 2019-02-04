@@ -1,14 +1,14 @@
-<app-header (featureSelected)="onNavigate($event)"></app-header>
+<!--<app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="container">
-<!--  <app-cockpit
+&lt;!&ndash;  <app-cockpit
     (serverCreated)="onServerAdded($event)"
-    (blueprintCreated)="onBlueprintAdded($event)"></app-cockpit>-->
+    (blueprintCreated)="onBlueprintAdded($event)"></app-cockpit>&ndash;&gt;
   <hr>
   <div class="row">
     <div class="col-md-12">
       <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
       <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
-     <!-- <app-server-element
+     &lt;!&ndash; <app-server-element
         *ngFor="let serverElement of serverElements"
         [srvElement]="serverElement">
         <p #contentParagraph>
@@ -17,8 +17,10 @@
             style="color: red;">{{ serverElement.content }}</strong>
           <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
         </p>
-      </app-server-element>-->
+      </app-server-element>&ndash;&gt;
     </div>
   </div>
-  <!--<app-game-control></app-game-control>-->
-</div>
+  &lt;!&ndash;<app-game-control></app-game-control>&ndash;&gt;
+</div>-->
+<app-header></app-header>
+<router-outlet class="container"></router-outlet>
